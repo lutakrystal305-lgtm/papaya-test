@@ -1,0 +1,4 @@
+claim_id,policy_id,member_name,claim_type,diagnosis,submitted_amount,currency,submitted_date,status
+CLM-1,POL-1,A B,OUTPATIENT,Flu,100,THB,2024-01-01,APPROVED
+CLM-2,POL-2,C D,OUTPATIENT,Flu,100,THB,2024-01-02,APPROVED
+CLM-3,POL-3,E F,OUTPATIENT,Flu,100,THB,2024-01-03

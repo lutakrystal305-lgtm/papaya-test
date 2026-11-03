@@ -1,0 +1,189 @@
+{
+  "results": [
+    {
+      "expense_id": "ALT-001",
+      "date": "2024-01-15",
+      "benefit_type": "VISION",
+      "sub_benefit": "Eye Examination",
+      "submitted_amount": 1200,
+      "covered_amount": 0,
+      "copay_amount": 0,
+      "deductible_applied": 0,
+      "member_pays": 1200,
+      "decision": "DENIED",
+      "reason": "Denied: VISION waiting period of 30 days ends 2024-01-31 (16 days remaining).",
+      "remaining_annual_limit": 8000,
+      "remaining_visit_limit": null
+    },
+    {
+      "expense_id": "ALT-002",
+      "date": "2024-02-05",
+      "benefit_type": "OUTPATIENT",
+      "sub_benefit": "GP Consultation",
+      "submitted_amount": 1000,
+      "covered_amount": 700,
+      "copay_amount": 300,
+      "deductible_applied": 0,
+      "member_pays": 300,
+      "decision": "PARTIALLY_COVERED",
+      "reason": "Fixed copay applied: 300 THB. Covered: 700 THB. Member pays: 300 THB.",
+      "remaining_annual_limit": 29300,
+      "remaining_visit_limit": null
+    },
+    {
+      "expense_id": "ALT-003",
+      "date": "2024-02-20",
+      "benefit_type": "VISION",
+      "sub_benefit": "Eye Examination",
+      "submitted_amount": 1800,
+      "covered_amount": 1170,
+      "copay_amount": 130,
+      "deductible_applied": 500,
+      "member_pays": 630,
+      "decision": "PARTIALLY_COVERED",
+      "reason": "Deductible applied: 500 THB (0 THB deductible remaining). 10% copay applied: 130 THB. Covered: 1,170 THB. Member pays: 630 THB.",
+      "remaining_annual_limit": 6830,
+      "remaining_visit_limit": null
+    },
+    {
+      "expense_id": "ALT-004",
+      "date": "2024-03-10",
+      "benefit_type": "CRITICAL_ILLNESS",
+      "sub_benefit": "Cancer Treatment",
+      "submitted_amount": 120000,
+      "covered_amount": 120000,
+      "copay_amount": 0,
+      "deductible_applied": 0,
+      "member_pays": 0,
+      "decision": "COVERED",
+      "reason": "Fully covered: 120,000 THB.",
+      "remaining_annual_limit": 380000,
+      "remaining_visit_limit": null
+    },
+    {
+      "expense_id": "ALT-005",
+      "date": "2024-04-01",
+      "benefit_type": "VISION",
+      "sub_benefit": "Glasses",
+      "submitted_amount": 6500,
+      "covered_amount": 5000,
+      "copay_amount": 650,
+      "deductible_applied": 0,
+      "member_pays": 1500,
+      "decision": "PARTIALLY_COVERED",
+      "reason": "10% copay applied: 650 THB. Covered amount limited by remaining Glasses annual sub-limit (5,000 THB); 850 THB above limit. Covered: 5,000 THB. Member pays: 1,500 THB.",
+      "remaining_annual_limit": 1830,
+      "remaining_visit_limit": null
+    },
+    {
+      "expense_id": "ALT-006",
+      "date": "2024-05-12",
+      "benefit_type": "OUTPATIENT",
+      "sub_benefit": "Specialist Consultation",
+      "submitted_amount": 2000,
+      "covered_amount": 0,
+      "copay_amount": 0,
+      "deductible_applied": 0,
+      "member_pays": 2000,
+      "decision": "DENIED",
+      "reason": "Denied: excluded condition \"Experimental or unproven treatment\" (matched \"experimental\").",
+      "remaining_annual_limit": 29300,
+      "remaining_visit_limit": 2
+    }
+  ],
+  "summary": {
+    "policy_number": "POL-2024-TH-INDV-0042",
+    "currency": "THB",
+    "expense_count": 6,
+    "totals": {
+      "submitted": 132500,
+      "covered": 126870,
+      "copay": 1080,
+      "deductible": 500,
+      "member_pays": 5630
+    },
+    "decisions": {
+      "COVERED": 1,
+      "PARTIALLY_COVERED": 3,
+      "DENIED": 2
+    },
+    "benefits": [
+      {
+        "type": "OUTPATIENT",
+        "limit_kind": "ANNUAL",
+        "limit": 30000,
+        "used": 700,
+        "remaining": 29300,
+        "deductible": null,
+        "sub_benefits": [
+          {
+            "name": "GP Consultation",
+            "used": 700,
+            "year_limit": null,
+            "visits": null,
+            "days": null
+          },
+          {
+            "name": "Specialist Consultation",
+            "used": 0,
+            "year_limit": null,
+            "visits": {
+              "limit": 2,
+              "used": 0,
+              "remaining": 2
+            },
+            "days": null
+          }
+        ]
+      },
+      {
+        "type": "VISION",
+        "limit_kind": "ANNUAL",
+        "limit": 8000,
+        "used": 6170,
+        "remaining": 1830,
+        "deductible": {
+          "amount": 500,
+          "used": 500,
+          "remaining": 0
+        },
+        "sub_benefits": [
+          {
+            "name": "Eye Examination",
+            "used": 1170,
+            "year_limit": null,
+            "visits": null,
+            "days": null
+          },
+          {
+            "name": "Glasses",
+            "used": 5000,
+            "year_limit": {
+              "limit": 5000,
+              "remaining": 0
+            },
+            "visits": null,
+            "days": null
+          }
+        ]
+      },
+      {
+        "type": "CRITICAL_ILLNESS",
+        "limit_kind": "LIFETIME",
+        "limit": 500000,
+        "used": 120000,
+        "remaining": 380000,
+        "deductible": null,
+        "sub_benefits": [
+          {
+            "name": "Cancer Treatment",
+            "used": 120000,
+            "year_limit": null,
+            "visits": null,
+            "days": null
+          }
+        ]
+      }
+    ]
+  }
+}

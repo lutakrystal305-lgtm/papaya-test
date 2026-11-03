@@ -1,0 +1,56 @@
+[
+  {
+    "expense_id": "ALT-001",
+    "date": "2024-01-15",
+    "benefit_type": "VISION",
+    "sub_benefit": "Eye Examination",
+    "amount": 1200,
+    "diagnosis": "Myopia check",
+    "provider": "Rutnin Eye Hospital"
+  },
+  {
+    "expense_id": "ALT-002",
+    "date": "2024-02-05",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "GP Consultation",
+    "amount": 1000,
+    "diagnosis": "Common cold",
+    "provider": "Bangkok Hospital"
+  },
+  {
+    "expense_id": "ALT-003",
+    "date": "2024-02-20",
+    "benefit_type": "VISION",
+    "sub_benefit": "Eye Examination",
+    "amount": 1800,
+    "diagnosis": "Myopia follow-up",
+    "provider": "Rutnin Eye Hospital"
+  },
+  {
+    "expense_id": "ALT-004",
+    "date": "2024-03-10",
+    "benefit_type": "CRITICAL_ILLNESS",
+    "sub_benefit": "Cancer Treatment",
+    "amount": 120000,
+    "diagnosis": "Breast cancer chemotherapy",
+    "provider": "Chulabhorn Hospital"
+  },
+  {
+    "expense_id": "ALT-005",
+    "date": "2024-04-01",
+    "benefit_type": "VISION",
+    "sub_benefit": "Glasses",
+    "amount": 6500,
+    "diagnosis": "Prescription glasses",
+    "provider": "Rutnin Eye Hospital"
+  },
+  {
+    "expense_id": "ALT-006",
+    "date": "2024-05-12",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Specialist Consultation",
+    "amount": 2000,
+    "diagnosis": "Experimental stem cell therapy consult",
+    "provider": "Bangkok Hospital"
+  }
+]

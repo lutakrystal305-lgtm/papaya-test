@@ -1,0 +1,116 @@
+{
+  "policy_number": "POL-2024-TH-00789",
+  "plan": {
+    "name": "Corporate Health Plus",
+    "effective_date": "2024-01-01",
+    "expiry_date": "2024-12-31",
+    "currency": "THB"
+  },
+  "benefits": [
+    {
+      "type": "INPATIENT",
+      "annual_limit": 200000,
+      "copay": {
+        "percentage": 0
+      },
+      "sub_benefits": [
+        {
+          "name": "Room & Board",
+          "limit_per_day": 4000,
+          "max_days": 10
+        },
+        {
+          "name": "Surgery",
+          "limit_per_event": 150000
+        },
+        {
+          "name": "Ambulance",
+          "limit_per_event": 3000
+        }
+      ]
+    },
+    {
+      "type": "OUTPATIENT",
+      "annual_limit": 20000,
+      "deductible": 1000,
+      "copay": {
+        "percentage": 20,
+        "max_per_visit": 500
+      },
+      "sub_benefits": [
+        {
+          "name": "Doctor Visit",
+          "limit_per_visit": 3000,
+          "visits_per_year": 5
+        },
+        {
+          "name": "Prescribed Medicine",
+          "limit_per_visit": 2000,
+          "copay": {
+            "fixed_per_visit": 200
+          }
+        },
+        {
+          "name": "Diagnostic Tests",
+          "limit_per_year": 6000
+        }
+      ]
+    },
+    {
+      "type": "DENTAL",
+      "annual_limit": 10000,
+      "waiting_period_days": 90,
+      "copay": {
+        "percentage": 30
+      },
+      "sub_benefits": [
+        {
+          "name": "Basic Dental",
+          "limit_per_year": 6000
+        },
+        {
+          "name": "Major Dental",
+          "limit_per_year": 4000
+        }
+      ]
+    },
+    {
+      "type": "MATERNITY",
+      "lifetime_limit": 50000,
+      "waiting_period_days": 270,
+      "sub_benefits": [
+        {
+          "name": "Prenatal Care",
+          "limit_per_year": 15000
+        },
+        {
+          "name": "Normal Delivery",
+          "limit_per_event": 50000
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "label": "Cosmetic surgery and elective procedures",
+      "terms": [
+        "cosmetic",
+        "aesthetic",
+        "botox"
+      ]
+    },
+    {
+      "label": "Self-inflicted injuries",
+      "terms": [
+        "self-inflicted"
+      ]
+    },
+    {
+      "label": "Injuries from extreme sports without prior declaration",
+      "terms": [
+        "bungee",
+        "skydiving"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+status,currency,submitted_amount,claim_id,policy_id,member_name,claim_type,diagnosis,submitted_date
+APPROVED,THB,100,CLM-1,POL-1,A B,OUTPATIENT,Flu,2024-01-01
+PENDING,VND,200000,CLM-2,POL-2,C D,INPATIENT,Asthma,2024-01-02

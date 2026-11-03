@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "policy-benefits-calculator/expenses.schema.json",
+  "title": "Expenses",
+  "description": "The top level MUST be an array (otherwise fatal InputFormatError). Each element that breaks the item schema is NOT fatal: it becomes a DENIED result with a validation reason (FR-007). expense_id must be unique; duplicates after the first are denied.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["expense_id", "date", "benefit_type", "sub_benefit", "amount", "diagnosis", "provider"],
+    "properties": {
+      "expense_id": { "type": "string", "minLength": 1 },
+      "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+      "benefit_type": { "type": "string", "minLength": 1 },
+      "sub_benefit": { "type": "string", "minLength": 1 },
+      "amount": { "type": "number", "exclusiveMinimum": 0 },
+      "diagnosis": { "type": "string" },
+      "provider": { "type": "string" },
+      "days": { "type": "integer", "minimum": 1, "default": 1 }
+    }
+  },
+  "examples": [
+    [
+      {
+        "expense_id": "EXP-001",
+        "date": "2024-03-15",
+        "benefit_type": "OUTPATIENT",
+        "sub_benefit": "Doctor Visit",
+        "amount": 2500,
+        "diagnosis": "Acute bronchitis",
+        "provider": "Bangkok Hospital"
+      }
+    ]
+  ]
+}

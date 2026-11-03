@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claims-data-cleanup/issue-log.schema.json",
+  "title": "Generator issue log",
+  "description": "Written by `generate` to data/claims_dirty.issues.json. Lists the issues the generator injected (FR-006). The cleanup never reads it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["seed", "total_rows", "rows_with_issues", "rows_with_multiple_issues", "variant_counts", "rows"],
+  "properties": {
+    "seed": { "type": "integer", "minimum": 0, "maximum": 4294967295 },
+    "total_rows": { "const": 500 },
+    "rows_with_issues": { "type": "integer", "minimum": 75, "maximum": 100 },
+    "rows_with_multiple_issues": { "type": "integer", "minimum": 5 },
+    "variant_counts": {
+      "description": "One entry for each of the 21 variants in research R-08, in R-08 order.",
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["variant", "count"],
+        "properties": {
+          "variant": { "type": "string", "examples": ["claim_type:Outpateint", "amount:comma", "date:month-name"] },
+          "count": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "rows": {
+      "description": "Only rows with at least one issue, in ascending source_row order.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_row", "claim_id", "issues"],
+        "properties": {
+          "source_row": { "type": "integer", "minimum": 1, "maximum": 500, "description": "1-based data row number in the dirty CSV (header not counted)." },
+          "claim_id": { "type": "string", "description": "The raw claim_id as written. Empty when the claim ID is missing." },
+          "issues": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "Codes the cleanup must report for this row, in catalogue order. A removed duplicate has only DUPLICATE_ROW.",
+            "items": { "$ref": "#/$defs/issueCode" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "issueCode": {
+      "enum": [
+        "DUPLICATE_ROW", "CONFLICTING_CLAIM_ID", "MISSING_CLAIM_ID", "MISSING_POLICY_ID",
+        "MISSING_MEMBER_NAME", "NAME_CASING_FIXED", "MISSING_CLAIM_TYPE", "CLAIM_TYPE_NORMALIZED",
+        "CLAIM_TYPE_UNRECOGNIZED", "MISSING_DIAGNOSIS", "DIAGNOSIS_CASING_FIXED", "MISSING_AMOUNT",
+        "AMOUNT_REFORMATTED", "AMOUNT_ZERO", "AMOUNT_NEGATIVE", "AMOUNT_UNPARSEABLE",
+        "MISSING_CURRENCY", "CURRENCY_NORMALIZED", "CURRENCY_UNRECOGNIZED", "MISSING_DATE",
+        "DATE_REFORMATTED", "DATE_INVALID", "MISSING_STATUS", "STATUS_NORMALIZED", "STATUS_UNRECOGNIZED"
+      ]
+    }
+  }
+}

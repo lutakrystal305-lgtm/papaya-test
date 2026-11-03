@@ -1,0 +1,7 @@
+node_modules/
+*.tmp
+*.log
+.DS_Store
+test-results/coverage/lcov-report/
+test-results/coverage/lcov.info
+test-results/coverage/coverage-final.json

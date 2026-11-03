@@ -1,0 +1,38 @@
+[
+  {
+    "expense_id": "MIX-001",
+    "date": "2024-02-01",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 2500,
+    "diagnosis": "Influenza",
+    "provider": "Bangkok Hospital"
+  },
+  {
+    "expense_id": "MIX-002",
+    "date": "2024-02-02",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 0,
+    "diagnosis": "Influenza",
+    "provider": "Bangkok Hospital"
+  },
+  {
+    "expense_id": "MIX-003",
+    "date": "2024-02-30",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Doctor Visit",
+    "amount": 1200,
+    "diagnosis": "Influenza",
+    "provider": "Bangkok Hospital"
+  },
+  {
+    "expense_id": "MIX-004",
+    "date": "2024-02-04",
+    "benefit_type": "INPATIENT",
+    "sub_benefit": "Surgery",
+    "amount": 10000,
+    "diagnosis": "Hernia repair",
+    "provider": "Bangkok Hospital"
+  }
+]

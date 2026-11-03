@@ -1,0 +1,12 @@
+node_modules/
+dist/
+out/
+coverage/
+*.tsbuildinfo
+.env
+test-results/coverage/lcov-report/
+*.log
+.DS_Store
+.env.*
+!.env.example
+test-results/coverage/lcov.info

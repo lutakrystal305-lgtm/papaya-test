@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claims-data-cleanup/report.schema.json",
+  "title": "Data quality report",
+  "description": "Written by `clean` to output/report.json. It has the same figures as report.md (FR-021 to FR-026). Keys are emitted in the order listed here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_file", "row_counts", "issues", "claims_by_type", "claims_by_status", "average_amount_by_type", "top_diagnoses"],
+  "properties": {
+    "source_file": { "type": "string", "pattern": "^[^/\\\\]+$", "description": "File name only, never a path." },
+    "row_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["before", "duplicates_removed", "after"],
+      "description": "Always before − duplicates_removed = after.",
+      "properties": {
+        "before": { "type": "integer", "minimum": 0 },
+        "duplicates_removed": { "type": "integer", "minimum": 0 },
+        "after": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "issues": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["by_code", "rows_with_any_issue", "rows_with_multiple_issues"],
+      "properties": {
+        "by_code": {
+          "description": "Catalogue entries 2–25 (all codes except DUPLICATE_ROW), in catalogue order, including zero counts. Counts kept rows, not occurrences.",
+          "type": "array",
+          "minItems": 24,
+          "maxItems": 24,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["code", "column", "severity", "rows"],
+            "properties": {
+              "code": { "type": "string" },
+              "column": { "$ref": "#/$defs/column" },
+              "severity": { "enum": ["fixed", "invalid"] },
+              "rows": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "rows_with_any_issue": { "type": "integer", "minimum": 0 },
+        "rows_with_multiple_issues": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "claims_by_type": {
+      "description": "OUTPATIENT, INPATIENT, DENTAL, MATERNITY (always present), then NULL only if it occurs.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/countEntry" }
+    },
+    "claims_by_status": {
+      "description": "APPROVED, REJECTED, PENDING, IN_REVIEW (always present), then NULL only if it occurs.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/countEntry" }
+    },
+    "average_amount_by_type": {
+      "description": "One entry for each claim type (in claims_by_type order) and each currency (THB, then VND). Uses only rows with a valid amount and a known currency.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_type", "currency", "rows", "average"],
+        "properties": {
+          "claim_type": { "type": "string" },
+          "currency": { "enum": ["THB", "VND"] },
+          "rows": { "type": "integer", "minimum": 0 },
+          "average": { "type": ["number", "null"], "description": "Rounded half up to 2 decimals. null when rows = 0." }
+        }
+      }
+    },
+    "top_diagnoses": {
+      "description": "Up to 5 entries. NULL is excluded. Sorted by count (highest first), then diagnosis (A–Z).",
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["diagnosis", "count"],
+        "properties": {
+          "diagnosis": { "type": "string" },
+          "count": { "type": "integer", "minimum": 1 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "column": {
+      "enum": ["claim_id", "policy_id", "member_name", "claim_type", "diagnosis", "submitted_amount", "currency", "submitted_date", "status"]
+    },
+    "countEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "count"],
+      "properties": {
+        "value": { "type": "string" },
+        "count": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

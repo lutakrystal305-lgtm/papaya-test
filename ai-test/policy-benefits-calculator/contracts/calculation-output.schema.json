@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "policy-benefits-calculator/calculation-output.schema.json",
+  "title": "CalculationOutput",
+  "description": "Library return value and the content of results.json. Deterministic: no timestamps. Results are in processing order (date asc, expense_id asc). Amounts are major units, at most 2 decimals.",
+  "type": "object",
+  "required": ["results", "summary"],
+  "additionalProperties": false,
+  "properties": {
+    "results": { "type": "array", "items": { "$ref": "#/$defs/expenseResult" } },
+    "summary": { "$ref": "#/$defs/runSummary" }
+  },
+  "$defs": {
+    "amount": { "type": "number", "minimum": 0 },
+    "decision": { "enum": ["COVERED", "PARTIALLY_COVERED", "DENIED"] },
+    "expenseResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expense_id", "date", "benefit_type", "sub_benefit",
+        "submitted_amount", "covered_amount", "copay_amount", "deductible_applied", "member_pays",
+        "decision", "reason", "remaining_annual_limit", "remaining_visit_limit"
+      ],
+      "properties": {
+        "expense_id": { "type": "string" },
+        "date": { "type": ["string", "null"] },
+        "benefit_type": { "type": ["string", "null"] },
+        "sub_benefit": { "type": ["string", "null"] },
+        "submitted_amount": { "$ref": "#/$defs/amount" },
+        "covered_amount": { "$ref": "#/$defs/amount" },
+        "copay_amount": { "$ref": "#/$defs/amount" },
+        "deductible_applied": { "$ref": "#/$defs/amount" },
+        "member_pays": { "$ref": "#/$defs/amount", "description": "Always submitted_amount - covered_amount." },
+        "decision": { "$ref": "#/$defs/decision" },
+        "reason": { "type": "string", "minLength": 1 },
+        "remaining_annual_limit": { "type": ["number", "null"], "minimum": 0, "description": "Remaining benefit-type limit (annual or lifetime) after this expense." },
+        "remaining_visit_limit": { "type": ["integer", "null"], "minimum": 0, "description": "Null when the sub-benefit has no visit cap." }
+      }
+    },
+    "counter": {
+      "type": ["object", "null"],
+      "required": ["limit", "used", "remaining"],
+      "properties": {
+        "limit": { "type": "number", "minimum": 0 },
+        "used": { "type": "number", "minimum": 0 },
+        "remaining": { "type": "number", "minimum": 0 }
+      }
+    },
+    "runSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy_number", "currency", "expense_count", "totals", "decisions", "benefits"],
+      "properties": {
+        "policy_number": { "type": "string" },
+        "currency": { "type": "string" },
+        "expense_count": { "type": "integer", "minimum": 0 },
+        "totals": {
+          "type": "object",
+          "required": ["submitted", "covered", "copay", "deductible", "member_pays"],
+          "properties": {
+            "submitted": { "$ref": "#/$defs/amount" },
+            "covered": { "$ref": "#/$defs/amount" },
+            "copay": { "$ref": "#/$defs/amount" },
+            "deductible": { "$ref": "#/$defs/amount" },
+            "member_pays": { "$ref": "#/$defs/amount" }
+          }
+        },
+        "decisions": {
+          "type": "object",
+          "required": ["COVERED", "PARTIALLY_COVERED", "DENIED"],
+          "properties": {
+            "COVERED": { "type": "integer", "minimum": 0 },
+            "PARTIALLY_COVERED": { "type": "integer", "minimum": 0 },
+            "DENIED": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "benefits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "limit_kind", "limit", "used", "remaining", "deductible", "sub_benefits"],
+            "properties": {
+              "type": { "type": "string" },
+              "limit_kind": { "enum": ["ANNUAL", "LIFETIME"] },
+              "limit": { "$ref": "#/$defs/amount" },
+              "used": { "$ref": "#/$defs/amount" },
+              "remaining": { "$ref": "#/$defs/amount" },
+              "deductible": {
+                "type": ["object", "null"],
+                "required": ["amount", "used", "remaining"],
+                "properties": {
+                  "amount": { "$ref": "#/$defs/amount" },
+                  "used": { "$ref": "#/$defs/amount" },
+                  "remaining": { "$ref": "#/$defs/amount" }
+                }
+              },
+              "sub_benefits": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["name", "used", "year_limit", "visits", "days"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "used": { "$ref": "#/$defs/amount" },
+                    "year_limit": {
+                      "type": ["object", "null"],
+                      "required": ["limit", "remaining"],
+                      "properties": {
+                        "limit": { "$ref": "#/$defs/amount" },
+                        "remaining": { "$ref": "#/$defs/amount" }
+                      }
+                    },
+                    "visits": { "$ref": "#/$defs/counter" },
+                    "days": { "$ref": "#/$defs/counter" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

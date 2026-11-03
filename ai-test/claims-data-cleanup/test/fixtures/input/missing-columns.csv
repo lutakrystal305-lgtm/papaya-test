@@ -1,0 +1,2 @@
+claim_id,policy_id,member_name,claim_type,diagnosis,submitted_amount,submitted_date
+CLM-1,POL-1,A B,OUTPATIENT,Flu,100,2024-01-01

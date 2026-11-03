@@ -1,0 +1,30 @@
+{
+  "policy_number": "POL-INVALID",
+  "plan": {
+    "effective_date": "2024-12-31",
+    "expiry_date": "2024-01-01",
+    "currency": "THB"
+  },
+  "benefits": [
+    {
+      "type": "OUTPATIENT",
+      "sub_benefits": [
+        {
+          "name": "Doctor Visit"
+        }
+      ]
+    },
+    {
+      "type": "DENTAL",
+      "annual_limit": -5,
+      "copay": {
+        "percentage": 150
+      },
+      "sub_benefits": [
+        {
+          "name": "Basic Dental"
+        }
+      ]
+    }
+  ]
+}

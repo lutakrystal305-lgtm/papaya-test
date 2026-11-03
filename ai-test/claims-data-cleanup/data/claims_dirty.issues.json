@@ -1,0 +1,717 @@
+{
+  "seed": 42,
+  "total_rows": 500,
+  "rows_with_issues": 86,
+  "rows_with_multiple_issues": 15,
+  "variant_counts": [
+    {
+      "variant": "claim_id:missing",
+      "count": 4
+    },
+    {
+      "variant": "policy_id:missing",
+      "count": 5
+    },
+    {
+      "variant": "member_name:upper",
+      "count": 9
+    },
+    {
+      "variant": "member_name:lower",
+      "count": 6
+    },
+    {
+      "variant": "claim_type:outpatient",
+      "count": 4
+    },
+    {
+      "variant": "claim_type:Outpateint",
+      "count": 1
+    },
+    {
+      "variant": "claim_type:OP",
+      "count": 2
+    },
+    {
+      "variant": "claim_type:inpatient",
+      "count": 3
+    },
+    {
+      "variant": "claim_type:IP",
+      "count": 1
+    },
+    {
+      "variant": "claim_type:dental",
+      "count": 1
+    },
+    {
+      "variant": "diagnosis:empty",
+      "count": 5
+    },
+    {
+      "variant": "diagnosis:N/A",
+      "count": 5
+    },
+    {
+      "variant": "diagnosis:n/a",
+      "count": 5
+    },
+    {
+      "variant": "amount:negative",
+      "count": 4
+    },
+    {
+      "variant": "amount:zero",
+      "count": 5
+    },
+    {
+      "variant": "amount:comma",
+      "count": 6
+    },
+    {
+      "variant": "currency:thb",
+      "count": 6
+    },
+    {
+      "variant": "currency:Baht",
+      "count": 5
+    },
+    {
+      "variant": "currency:vnd",
+      "count": 2
+    },
+    {
+      "variant": "date:dd/mm/yyyy",
+      "count": 8
+    },
+    {
+      "variant": "date:month-name",
+      "count": 6
+    }
+  ],
+  "rows": [
+    {
+      "source_row": 1,
+      "claim_id": "",
+      "issues": [
+        "MISSING_CLAIM_ID",
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 2,
+      "claim_id": "CLM-00002",
+      "issues": [
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 7,
+      "claim_id": "CLM-00007",
+      "issues": [
+        "CONFLICTING_CLAIM_ID"
+      ]
+    },
+    {
+      "source_row": 16,
+      "claim_id": "CLM-00016",
+      "issues": [
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 28,
+      "claim_id": "CLM-00028",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 33,
+      "claim_id": "CLM-00033",
+      "issues": [
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 35,
+      "claim_id": "CLM-00035",
+      "issues": [
+        "AMOUNT_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 40,
+      "claim_id": "CLM-00040",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 43,
+      "claim_id": "CLM-00043",
+      "issues": [
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 55,
+      "claim_id": "CLM-00055",
+      "issues": [
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 86,
+      "claim_id": "CLM-00086",
+      "issues": [
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 89,
+      "claim_id": "CLM-00089",
+      "issues": [
+        "NAME_CASING_FIXED",
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 97,
+      "claim_id": "CLM-00097",
+      "issues": [
+        "MISSING_DIAGNOSIS",
+        "AMOUNT_NEGATIVE",
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 99,
+      "claim_id": "CLM-00099",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 102,
+      "claim_id": "",
+      "issues": [
+        "MISSING_CLAIM_ID"
+      ]
+    },
+    {
+      "source_row": 112,
+      "claim_id": "CLM-00112",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 113,
+      "claim_id": "CLM-00113",
+      "issues": [
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 118,
+      "claim_id": "CLM-00118",
+      "issues": [
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 124,
+      "claim_id": "CLM-00124",
+      "issues": [
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 125,
+      "claim_id": "CLM-00125",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 126,
+      "claim_id": "CLM-00126",
+      "issues": [
+        "AMOUNT_ZERO"
+      ]
+    },
+    {
+      "source_row": 129,
+      "claim_id": "CLM-00129",
+      "issues": [
+        "AMOUNT_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 135,
+      "claim_id": "CLM-00135",
+      "issues": [
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 140,
+      "claim_id": "CLM-00140",
+      "issues": [
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 151,
+      "claim_id": "CLM-00151",
+      "issues": [
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 157,
+      "claim_id": "CLM-00157",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 161,
+      "claim_id": "CLM-00161",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 166,
+      "claim_id": "CLM-00166",
+      "issues": [
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 175,
+      "claim_id": "CLM-00142",
+      "issues": [
+        "DUPLICATE_ROW"
+      ]
+    },
+    {
+      "source_row": 182,
+      "claim_id": "CLM-00181",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 187,
+      "claim_id": "CLM-00186",
+      "issues": [
+        "CONFLICTING_CLAIM_ID"
+      ]
+    },
+    {
+      "source_row": 188,
+      "claim_id": "CLM-00187",
+      "issues": [
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 212,
+      "claim_id": "CLM-00211",
+      "issues": [
+        "AMOUNT_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 217,
+      "claim_id": "CLM-00186",
+      "issues": [
+        "CONFLICTING_CLAIM_ID",
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 218,
+      "claim_id": "CLM-00216",
+      "issues": [
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 221,
+      "claim_id": "CLM-00219",
+      "issues": [
+        "NAME_CASING_FIXED",
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 231,
+      "claim_id": "CLM-00229",
+      "issues": [
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 236,
+      "claim_id": "CLM-00234",
+      "issues": [
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 240,
+      "claim_id": "CLM-00238",
+      "issues": [
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 248,
+      "claim_id": "CLM-00246",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 250,
+      "claim_id": "CLM-00248",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 254,
+      "claim_id": "CLM-00252",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 255,
+      "claim_id": "CLM-00253",
+      "issues": [
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 256,
+      "claim_id": "CLM-00231",
+      "issues": [
+        "DUPLICATE_ROW"
+      ]
+    },
+    {
+      "source_row": 260,
+      "claim_id": "",
+      "issues": [
+        "MISSING_CLAIM_ID"
+      ]
+    },
+    {
+      "source_row": 268,
+      "claim_id": "CLM-00265",
+      "issues": [
+        "MISSING_POLICY_ID"
+      ]
+    },
+    {
+      "source_row": 270,
+      "claim_id": "CLM-00267",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 273,
+      "claim_id": "CLM-00270",
+      "issues": [
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 285,
+      "claim_id": "CLM-00282",
+      "issues": [
+        "MISSING_POLICY_ID",
+        "AMOUNT_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 290,
+      "claim_id": "CLM-00287",
+      "issues": [
+        "AMOUNT_ZERO"
+      ]
+    },
+    {
+      "source_row": 312,
+      "claim_id": "CLM-00298",
+      "issues": [
+        "DUPLICATE_ROW"
+      ]
+    },
+    {
+      "source_row": 317,
+      "claim_id": "CLM-00313",
+      "issues": [
+        "MISSING_POLICY_ID"
+      ]
+    },
+    {
+      "source_row": 319,
+      "claim_id": "CLM-00315",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 325,
+      "claim_id": "CLM-00321",
+      "issues": [
+        "MISSING_POLICY_ID"
+      ]
+    },
+    {
+      "source_row": 331,
+      "claim_id": "CLM-00034",
+      "issues": [
+        "DUPLICATE_ROW"
+      ]
+    },
+    {
+      "source_row": 335,
+      "claim_id": "CLM-00330",
+      "issues": [
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 341,
+      "claim_id": "CLM-00336",
+      "issues": [
+        "NAME_CASING_FIXED",
+        "CLAIM_TYPE_NORMALIZED",
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 347,
+      "claim_id": "CLM-00342",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 349,
+      "claim_id": "CLM-00003",
+      "issues": [
+        "DUPLICATE_ROW"
+      ]
+    },
+    {
+      "source_row": 375,
+      "claim_id": "CLM-00369",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 379,
+      "claim_id": "CLM-00373",
+      "issues": [
+        "NAME_CASING_FIXED",
+        "AMOUNT_NEGATIVE",
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 382,
+      "claim_id": "CLM-00376",
+      "issues": [
+        "MISSING_DIAGNOSIS",
+        "AMOUNT_REFORMATTED",
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 383,
+      "claim_id": "CLM-00377",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 390,
+      "claim_id": "CLM-00007",
+      "issues": [
+        "CONFLICTING_CLAIM_ID",
+        "NAME_CASING_FIXED"
+      ]
+    },
+    {
+      "source_row": 395,
+      "claim_id": "CLM-00388",
+      "issues": [
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 400,
+      "claim_id": "CLM-00393",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED",
+        "AMOUNT_ZERO"
+      ]
+    },
+    {
+      "source_row": 403,
+      "claim_id": "CLM-00396",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 405,
+      "claim_id": "CLM-00398",
+      "issues": [
+        "AMOUNT_ZERO",
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 415,
+      "claim_id": "CLM-00408",
+      "issues": [
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 425,
+      "claim_id": "CLM-00418",
+      "issues": [
+        "AMOUNT_ZERO"
+      ]
+    },
+    {
+      "source_row": 426,
+      "claim_id": "CLM-00419",
+      "issues": [
+        "AMOUNT_NEGATIVE"
+      ]
+    },
+    {
+      "source_row": 429,
+      "claim_id": "CLM-00422",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 430,
+      "claim_id": "CLM-00423",
+      "issues": [
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 431,
+      "claim_id": "CLM-00069",
+      "issues": [
+        "DUPLICATE_ROW"
+      ]
+    },
+    {
+      "source_row": 435,
+      "claim_id": "CLM-00427",
+      "issues": [
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 437,
+      "claim_id": "",
+      "issues": [
+        "MISSING_CLAIM_ID"
+      ]
+    },
+    {
+      "source_row": 442,
+      "claim_id": "CLM-00434",
+      "issues": [
+        "MISSING_POLICY_ID",
+        "MISSING_DIAGNOSIS",
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 453,
+      "claim_id": "CLM-00445",
+      "issues": [
+        "AMOUNT_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 469,
+      "claim_id": "CLM-00461",
+      "issues": [
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 470,
+      "claim_id": "CLM-00457",
+      "issues": [
+        "DUPLICATE_ROW"
+      ]
+    },
+    {
+      "source_row": 475,
+      "claim_id": "CLM-00173",
+      "issues": [
+        "DUPLICATE_ROW"
+      ]
+    },
+    {
+      "source_row": 478,
+      "claim_id": "CLM-00468",
+      "issues": [
+        "MISSING_DIAGNOSIS",
+        "AMOUNT_NEGATIVE",
+        "DATE_REFORMATTED"
+      ]
+    },
+    {
+      "source_row": 485,
+      "claim_id": "CLM-00475",
+      "issues": [
+        "MISSING_DIAGNOSIS"
+      ]
+    },
+    {
+      "source_row": 494,
+      "claim_id": "CLM-00484",
+      "issues": [
+        "CONFLICTING_CLAIM_ID"
+      ]
+    },
+    {
+      "source_row": 495,
+      "claim_id": "CLM-00484",
+      "issues": [
+        "CONFLICTING_CLAIM_ID",
+        "CURRENCY_NORMALIZED"
+      ]
+    },
+    {
+      "source_row": 499,
+      "claim_id": "CLM-00488",
+      "issues": [
+        "CLAIM_TYPE_NORMALIZED"
+      ]
+    }
+  ]
+}

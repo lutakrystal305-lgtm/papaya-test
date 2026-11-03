@@ -1,0 +1,266 @@
+{
+  "source_file": "claims_dirty.csv",
+  "row_counts": {
+    "before": 500,
+    "duplicates_removed": 8,
+    "after": 492
+  },
+  "issues": {
+    "by_code": [
+      {
+        "code": "CONFLICTING_CLAIM_ID",
+        "column": "claim_id",
+        "severity": "invalid",
+        "rows": 6
+      },
+      {
+        "code": "MISSING_CLAIM_ID",
+        "column": "claim_id",
+        "severity": "invalid",
+        "rows": 4
+      },
+      {
+        "code": "MISSING_POLICY_ID",
+        "column": "policy_id",
+        "severity": "invalid",
+        "rows": 5
+      },
+      {
+        "code": "MISSING_MEMBER_NAME",
+        "column": "member_name",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "NAME_CASING_FIXED",
+        "column": "member_name",
+        "severity": "fixed",
+        "rows": 15
+      },
+      {
+        "code": "MISSING_CLAIM_TYPE",
+        "column": "claim_type",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "CLAIM_TYPE_NORMALIZED",
+        "column": "claim_type",
+        "severity": "fixed",
+        "rows": 12
+      },
+      {
+        "code": "CLAIM_TYPE_UNRECOGNIZED",
+        "column": "claim_type",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "MISSING_DIAGNOSIS",
+        "column": "diagnosis",
+        "severity": "invalid",
+        "rows": 15
+      },
+      {
+        "code": "DIAGNOSIS_CASING_FIXED",
+        "column": "diagnosis",
+        "severity": "fixed",
+        "rows": 0
+      },
+      {
+        "code": "MISSING_AMOUNT",
+        "column": "submitted_amount",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "AMOUNT_REFORMATTED",
+        "column": "submitted_amount",
+        "severity": "fixed",
+        "rows": 6
+      },
+      {
+        "code": "AMOUNT_ZERO",
+        "column": "submitted_amount",
+        "severity": "invalid",
+        "rows": 5
+      },
+      {
+        "code": "AMOUNT_NEGATIVE",
+        "column": "submitted_amount",
+        "severity": "invalid",
+        "rows": 4
+      },
+      {
+        "code": "AMOUNT_UNPARSEABLE",
+        "column": "submitted_amount",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "MISSING_CURRENCY",
+        "column": "currency",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "CURRENCY_NORMALIZED",
+        "column": "currency",
+        "severity": "fixed",
+        "rows": 13
+      },
+      {
+        "code": "CURRENCY_UNRECOGNIZED",
+        "column": "currency",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "MISSING_DATE",
+        "column": "submitted_date",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "DATE_REFORMATTED",
+        "column": "submitted_date",
+        "severity": "fixed",
+        "rows": 14
+      },
+      {
+        "code": "DATE_INVALID",
+        "column": "submitted_date",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "MISSING_STATUS",
+        "column": "status",
+        "severity": "invalid",
+        "rows": 0
+      },
+      {
+        "code": "STATUS_NORMALIZED",
+        "column": "status",
+        "severity": "fixed",
+        "rows": 0
+      },
+      {
+        "code": "STATUS_UNRECOGNIZED",
+        "column": "status",
+        "severity": "invalid",
+        "rows": 0
+      }
+    ],
+    "rows_with_any_issue": 78,
+    "rows_with_multiple_issues": 15
+  },
+  "claims_by_type": [
+    {
+      "value": "OUTPATIENT",
+      "count": 114
+    },
+    {
+      "value": "INPATIENT",
+      "count": 110
+    },
+    {
+      "value": "DENTAL",
+      "count": 133
+    },
+    {
+      "value": "MATERNITY",
+      "count": 135
+    }
+  ],
+  "claims_by_status": [
+    {
+      "value": "APPROVED",
+      "count": 109
+    },
+    {
+      "value": "REJECTED",
+      "count": 127
+    },
+    {
+      "value": "PENDING",
+      "count": 135
+    },
+    {
+      "value": "IN_REVIEW",
+      "count": 121
+    }
+  ],
+  "average_amount_by_type": [
+    {
+      "claim_type": "OUTPATIENT",
+      "currency": "THB",
+      "rows": 68,
+      "average": 95147.16
+    },
+    {
+      "claim_type": "OUTPATIENT",
+      "currency": "VND",
+      "rows": 44,
+      "average": 26824477.27
+    },
+    {
+      "claim_type": "INPATIENT",
+      "currency": "THB",
+      "rows": 69,
+      "average": 94164.58
+    },
+    {
+      "claim_type": "INPATIENT",
+      "currency": "VND",
+      "rows": 38,
+      "average": 20228815.79
+    },
+    {
+      "claim_type": "DENTAL",
+      "currency": "THB",
+      "rows": 75,
+      "average": 107482.35
+    },
+    {
+      "claim_type": "DENTAL",
+      "currency": "VND",
+      "rows": 56,
+      "average": 23250357.14
+    },
+    {
+      "claim_type": "MATERNITY",
+      "currency": "THB",
+      "rows": 70,
+      "average": 101200.66
+    },
+    {
+      "claim_type": "MATERNITY",
+      "currency": "VND",
+      "rows": 63,
+      "average": 27050809.52
+    }
+  ],
+  "top_diagnoses": [
+    {
+      "diagnosis": "Gastritis",
+      "count": 40
+    },
+    {
+      "diagnosis": "Hypertension",
+      "count": 38
+    },
+    {
+      "diagnosis": "Asthma",
+      "count": 36
+    },
+    {
+      "diagnosis": "Dengue Fever",
+      "count": 36
+    },
+    {
+      "diagnosis": "Bronchitis",
+      "count": 35
+    }
+  ]
+}

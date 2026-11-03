@@ -1,0 +1,73 @@
+{
+  "policy_number": "POL-2024-TH-INDV-0042",
+  "plan": {
+    "name": "Individual Essential",
+    "effective_date": "2024-01-01",
+    "expiry_date": "2024-12-31",
+    "currency": "THB"
+  },
+  "benefits": [
+    {
+      "type": "OUTPATIENT",
+      "annual_limit": 30000,
+      "copay": {
+        "fixed_per_visit": 300
+      },
+      "sub_benefits": [
+        {
+          "name": "GP Consultation",
+          "limit_per_visit": 1500
+        },
+        {
+          "name": "Specialist Consultation",
+          "limit_per_visit": 2500,
+          "visits_per_year": 2
+        }
+      ]
+    },
+    {
+      "type": "VISION",
+      "annual_limit": 8000,
+      "deductible": 500,
+      "waiting_period_days": 30,
+      "copay": {
+        "percentage": 10
+      },
+      "sub_benefits": [
+        {
+          "name": "Eye Examination",
+          "limit_per_visit": 2000
+        },
+        {
+          "name": "Glasses",
+          "limit_per_year": 5000
+        }
+      ]
+    },
+    {
+      "type": "CRITICAL_ILLNESS",
+      "lifetime_limit": 500000,
+      "sub_benefits": [
+        {
+          "name": "Cancer Treatment",
+          "limit_per_event": 300000
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "label": "Experimental or unproven treatment",
+      "terms": [
+        "experimental"
+      ]
+    },
+    {
+      "label": "Cosmetic procedures",
+      "terms": [
+        "cosmetic",
+        "lasik"
+      ]
+    }
+  ]
+}
